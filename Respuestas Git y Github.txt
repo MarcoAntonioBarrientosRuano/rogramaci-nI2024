@@ -1,0 +1,22 @@
+1. ¿Qué es GIT? R// Git es un sistema de control de versiones distribuido que permite controlar los cambios en un proyecto a medida que crece en complejidad. Fue creado por Linus Torvalds para controlar los cambios en el código del kernel de Linux.
+
+2. ¿Cuáles son los comandos más importantes y para que sirven? R// Los comandos más importantes de Git y sus funciones son:
+   - `git init`: Inicializa un nuevo repositorio Git.
+   - `git add`: Agrega cambios al área de preparación (staging area) para ser incluidos en el próximo commit.
+   - `git status`: Muestra el estado actual del repositorio, incluyendo los cambios pendientes y los archivos no seguidos.
+   - `git commit`: Crea un snapshot del estado actual del proyecto.
+   - `git push`: Sube los commits locales al repositorio remoto.
+   - `git pull`: Descarga los cambios del repositorio remoto y los fusiona con el repositorio local.
+   - `git clone`: Clona un repositorio remoto en un directorio local.
+
+3. ¿Cuál es la diferencia entre Git y Github? R// La diferencia principal entre Git y GitHub es que Git es el sistema de control de versiones en sí mismo, mientras que GitHub es una plataforma de alojamiento de repositorios de Git en la nube. GitHub proporciona características adicionales como seguimiento de problemas, pull requests, y herramientas de colaboración que complementan el uso de Git.
+
+4. Enumere los comandos para subir cambios a un repositorio. R// Los comandos para subir cambios a un repositorio son:
+   - `git add .` (o `git add nombre_archivo`): Agrega los cambios al área de preparación.
+   - `git commit -m "Mensaje descriptivo"`: Crea un commit con los cambios agregados.
+   - `git push origin nombre_rama`: Sube los commits locales a la rama especificada del repositorio remoto.
+
+
+5. ¿Qué es una branch  ? R//Una branch (rama) en Git es una línea de desarrollo independiente que permite trabajar en características específicas o experimentar sin afectar la rama principal del proyecto (generalmente llamada "master" o "main"). Las ramas permiten realizar cambios sin interferir con el desarrollo principal y luego fusionar esos cambios de vuelta cuando estén listos.
+
+ 
