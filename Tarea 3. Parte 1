@@ -1,101 +1,100 @@
 Desafío 1:
-import java.util.Scanner;
+using System;
 
-public class Ingresos {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Por favor ingresa tu nombre: ");
+        string nombre = Console.ReadLine();
 
-        System.out.print("Ingrese su nombre: ");
-        String nombreUsuario = scanner.nextLine();
+        Console.Write("Ingresa tus ingresos del primer mes: ");
+        int ingresosMes1 = Convert.ToInt32(Console.ReadLine());
 
-        System.out.println("Ingrese los ingresos de los últimos 3 meses:");
+        Console.Write("Ingresa tus ingresos del segundo mes: ");
+        int ingresosMes2 = Convert.ToInt32(Console.ReadLine());
 
-        System.out.print("Mes 1: ");
-        double ingresosMes1 = scanner.nextDouble();
+        Console.Write("Ingresa tus ingresos del tercer mes: ");
+        int ingresosMes3 = Convert.ToInt32(Console.ReadLine());
 
-        System.out.print("Mes 2: ");
-        double ingresosMes2 = scanner.nextDouble();
+        int sumaIngresos = ingresosMes1 + ingresosMes2 + ingresosMes3;
 
-        System.out.print("Mes 3: ");
-        double ingresosMes3 = scanner.nextDouble();
+        int promedioIngresos = sumaIngresos / 3;
 
-        double sumaIngresos = ingresosMes1 + ingresosMes2 + ingresosMes3;
-        double promedioIngresos = sumaIngresos / 3;
+        Console.WriteLine($"Hola {nombre}, en total ganaste {sumaIngresos} y promediaste {promedioIngresos}");
 
-        System.out.println("Hola " + nombreUsuario + ", en total ganaste Q." + sumaIngresos + " y promediaste Q." + promedioIngresos + " en los últimos 3 meses.");
+        Console.ReadKey();
     }
 }
 
-
 Desafío 2:
-import java.util.Scanner;
+using System;
 
-public class Operaciones {
+public class CalculadoraSimple
+{
+    public int Sumar(int a, int b) => a + b;
+    public int Restar(int a, int b) => a - b;
+    public int Multiplicar(int a, int b) => a * b;
+    public int Dividir(int a, int b) => b != 0 ? a / b : 0;
+}
 
-    public int sumar(int num1, int num2) {
-        return num1 + num2;
-    }
+class Program
+{
+    static void Main(string[] args)
+    {
+        CalculadoraSimple calculadora = new CalculadoraSimple();
 
-    public int restar(int num1, int num2) {
-        return num1 - num2;
-    }
+        Console.WriteLine("Ingrese el primer número:");
+        int num1 = int.Parse(Console.ReadLine());
 
-    public int multiplicar(int num1, int num2) {
-        return num1 * num2;
-    }
+        Console.WriteLine("Ingrese el segundo número:");
+        int num2 = int.Parse(Console.ReadLine());
 
-    public int dividir(int num1, int num2) {
-        return num1 / num2;
-    }
+        Console.WriteLine($"Suma: {calculadora.Sumar(num1, num2)}");
+        Console.WriteLine($"Resta: {calculadora.Restar(num1, num2)}");
+        Console.WriteLine($"Multiplicación: {calculadora.Multiplicar(num1, num2)}");
+        Console.WriteLine($"División: {calculadora.Dividir(num1, num2)}");
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Ingrese el primer número: ");
-        int numero1 = scanner.nextInt();
-
-        System.out.println("Ingrese el segundo número: ");
-        int numero2 = scanner.nextInt();
-
-        OperacionesBasicas operaciones = new OperacionesBasicas();
-
-        System.out.println("Suma: " + operaciones.sumar(numero1, numero2));
-        System.out.println("Resta: " + operaciones.restar(numero1, numero2));
-        System.out.println("Multiplicación: " + operaciones.multiplicar(numero1, numero2));
-        System.out.println("División: " + operaciones.dividir(numero1, numero2));
-
-        scanner.close();
+        Console.ReadLine();
     }
 }
 
 Desafío 3:
-import java.util.Scanner;
+using System;
 
-public class Sumar {
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Ingrese dos números para sumar:");
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try
+        {
+            Console.Write("Número 1: ");
+            int num1 = int.Parse(Console.ReadLine());
 
-        System.out.println("Introduce el primer número:");
-        String input1 = scanner.nextLine();
+            Console.Write("Número 2: ");
+            int num2 = int.Parse(Console.ReadLine());
 
-        System.out.println("Introduce el segundo número:");
-        String input2 = scanner.nextLine();
-
-        try {
-            int num1 = Integer.parseInt(input1);
-            int num2 = Integer.parseInt(input2);
-
-            int suma = sumar(num1, num2);
-            System.out.println("La suma es: " + suma);
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Debes introducir números enteros.");
-        } finally {
-            scanner.close();
+            int suma = Sumar(num1, num2);
+            Console.WriteLine($"La suma de {num1} y {num2} es: {suma}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Debe ingresar un número válido.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Programa finalizado.");
         }
     }
 
-    public static int sumar(int a, int b) {
-        return a + b;
+    static int Sumar(int num1, int num2)
+    {
+        return num1 + num2;
     }
 }
