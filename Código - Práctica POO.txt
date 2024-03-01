@@ -1,0 +1,51 @@
+Código - Práctica POO:
+using System;
+
+abstract class Figura
+{
+    public abstract double CalcularArea();
+}
+
+class Rectangulo : Figura
+{
+    private double Base { get; }
+    private double Altura { get; }
+
+    public Rectangulo(double @base, double altura)
+    {
+        Base = @base;
+        Altura = altura;
+    }
+
+    public override double CalcularArea()
+    {
+        return Base * Altura;
+    }
+}
+
+class Circulo : Figura
+{
+    private double Radio { get; }
+
+    public Circulo(double radio)
+    {
+        Radio = radio;
+    }
+
+    public override double CalcularArea()
+    {
+        return Math.PI * Math.Pow(Radio, 2);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Figura rectangulo = new Rectangulo(5, 4);
+        Figura circulo = new Circulo(3);
+
+        Console.WriteLine("Área del rectángulo: " + rectangulo.CalcularArea());
+        Console.WriteLine("Área del círculo: " + circulo.CalcularArea());
+    }
+}
