@@ -1,0 +1,101 @@
+Desafío 1:
+import java.util.Scanner;
+
+public class Ingresos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese su nombre: ");
+        String nombreUsuario = scanner.nextLine();
+
+        System.out.println("Ingrese los ingresos de los últimos 3 meses:");
+
+        System.out.print("Mes 1: ");
+        double ingresosMes1 = scanner.nextDouble();
+
+        System.out.print("Mes 2: ");
+        double ingresosMes2 = scanner.nextDouble();
+
+        System.out.print("Mes 3: ");
+        double ingresosMes3 = scanner.nextDouble();
+
+        double sumaIngresos = ingresosMes1 + ingresosMes2 + ingresosMes3;
+        double promedioIngresos = sumaIngresos / 3;
+
+        System.out.println("Hola " + nombreUsuario + ", en total ganaste Q." + sumaIngresos + " y promediaste Q." + promedioIngresos + " en los últimos 3 meses.");
+    }
+}
+
+
+Desafío 2:
+import java.util.Scanner;
+
+public class Operaciones {
+
+    public int sumar(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    public int restar(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    public int multiplicar(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public int dividir(int num1, int num2) {
+        return num1 / num2;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese el primer número: ");
+        int numero1 = scanner.nextInt();
+
+        System.out.println("Ingrese el segundo número: ");
+        int numero2 = scanner.nextInt();
+
+        OperacionesBasicas operaciones = new OperacionesBasicas();
+
+        System.out.println("Suma: " + operaciones.sumar(numero1, numero2));
+        System.out.println("Resta: " + operaciones.restar(numero1, numero2));
+        System.out.println("Multiplicación: " + operaciones.multiplicar(numero1, numero2));
+        System.out.println("División: " + operaciones.dividir(numero1, numero2));
+
+        scanner.close();
+    }
+}
+
+Desafío 3:
+import java.util.Scanner;
+
+public class Sumar {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Introduce el primer número:");
+        String input1 = scanner.nextLine();
+
+        System.out.println("Introduce el segundo número:");
+        String input2 = scanner.nextLine();
+
+        try {
+            int num1 = Integer.parseInt(input1);
+            int num2 = Integer.parseInt(input2);
+
+            int suma = sumar(num1, num2);
+            System.out.println("La suma es: " + suma);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Debes introducir números enteros.");
+        } finally {
+            scanner.close();
+        }
+    }
+
+    public static int sumar(int a, int b) {
+        return a + b;
+    }
+}
